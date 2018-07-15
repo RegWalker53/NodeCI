@@ -31,7 +31,8 @@ mongoose.Query.prototype.exec = async function() {
 
   // If we do, return data from cache
   if (cacheValue) {
-    console.log('cacheValue: ', cacheValue);
+    console.log('------');
+    console.log('Reading data from redis');
     const doc = JSON.parse(cacheValue);
     // console.log('doc:', doc);
     // Convert the JSON result to a single model or array of models
@@ -44,12 +45,11 @@ mongoose.Query.prototype.exec = async function() {
 
   // Otherwise, issue the query and store the result in redis
   const result = await exec.apply(this, arguments); // executes the original
-  console.log('------');
-  console.log('------');
+
   console.log('------');
   console.log('preparing to write data to redis');
-  console.log('------');
-  console.log('------');
+
+  // create cache entry for the data from Mongo using hashkey a nd key
   client.hset(this.hashKey, key, JSON.stringify(result));
   // console.log('result: ', result);
   return result;
