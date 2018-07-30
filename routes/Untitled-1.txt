@@ -1,0 +1,10 @@
+// Temporary file 
+
+ fetch('/api/blogs', {
+     method: 'POST',
+     credentials: 'same-origin',
+     headers: {
+        'Content-Type': 'applicaton/json' 
+     },
+     body: JSON.stringify({ 'title': 'My Title', 'content': 'My Content from fetch'})
+ })
