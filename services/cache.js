@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const redis = require('redis');
 const keys = require('../config/keys');
 
-const client = redis.createClient(redisUrl);
+const client = redis.createClient(keys.redisUrl);
 const util = require('util');
 
 client.hget = util.promisify(client.hget);
