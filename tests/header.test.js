@@ -7,7 +7,7 @@ beforeEach(async () => { // performs pre-test setup
   // open a new page with app at .goto target
   page =  await Page.build(); // builds the Proxy, browser and page objects
 //  console.log('created a page');
-  await page.goto('localhost:3000');
+  await page.goto('http://localhost:3000');
 });
 
 afterEach(async () => { // performs post test clean up

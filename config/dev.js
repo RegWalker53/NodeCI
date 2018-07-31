@@ -4,5 +4,6 @@ module.exports = {
   googleClientSecret: 'KnH-rZC23z4fr2CN4ISK4srN',
   mongoURI: 
   'mongodb://rtw-dev:ex9m0l1z@ds121311.mlab.com:21311/blog_dev_rtw',
-  cookieKey: '123123123'
+  cookieKey: '123123123',
+  redisUrl: 'redis://127.0.0.1:6379'
 };
