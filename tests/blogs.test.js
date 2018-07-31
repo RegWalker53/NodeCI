@@ -66,5 +66,32 @@ describe('When logged in', () => {
             expect(contentError).toEqual('You must provide a value');
         });
     });
-})
+});
+
+describe('When user is not logged in', async () => {
+
+    const actions = [
+        {
+            method: 'get',
+            path: '/api/blogs'
+        },
+
+        {
+            method: 'post',
+            path: '/api/blogs',
+            data: {
+                title: 'T',
+                content: 'C'
+            }
+        }
+    ];
+
+    test('Blog relate actions are prohibited', async () => {
+        const results = await page.execRequest(actions);
+        for (let result of results) {
+            expect(result).toEqual({ error: 'You must log in!' });
+        }
+    });
+
+});
 
