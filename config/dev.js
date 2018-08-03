@@ -5,5 +5,8 @@ module.exports = {
   mongoURI: 
   'mongodb://rtw-dev:ex9m0l1z@ds121311.mlab.com:21311/blog_dev_rtw',
   cookieKey: '123123123',
-  redisUrl: 'redis://127.0.0.1:6379'
+  redisUrl: 'redis://127.0.0.1:6379',
+  accessKeyId: 'AKIAJIUU5PFR5NKCUU6Q',
+  secretAccessKey: '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'
 };
+
